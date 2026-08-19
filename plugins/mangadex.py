@@ -78,7 +78,7 @@ class MangaDexClient(MangaClient):
             return f'{c["attributes"]["chapter"]}'
 
         ids = [chapter.get("id") for chapter in chapters]
-        links = [f'https://api.mangadex.org/at-home/server/{chapter.get("id")}?forcePort443=false' for chapter in
+        links = [f'https://api.mangadex.org/at-home/server/{chapter.get("id")}?forcePort443=true' for chapter in
                  chapters]
         texts = [chapter_name(chapter) for chapter in chapters]
 
