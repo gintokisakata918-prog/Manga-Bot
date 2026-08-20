@@ -255,19 +255,23 @@ class Manhwa18NetClient(MangaClient):
 
         return result
 
-    async def get_picture(self, manga_chapter, url, *args, **kwargs):
+        async def get_picture(self, manga_chapter, url, *args, **kwargs):
         headers = {
             **self.headers,
-            "Referer": manga_chapter.url,
-            "Origin": "https://manhwa18.net",
+            "Referer": "https://manhwa18.net/",
         }
 
         kwargs["headers"] = headers
 
-        return await self.get_url(
+        response = await self.get_url(
             url,
             *args,
             **kwargs
+        )
+
+        print(f"Manhwa18Net image: {url} -> HTTP {response.status}")
+
+        return response
         )
 
     async def search(
