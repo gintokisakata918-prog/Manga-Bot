@@ -1,5 +1,5 @@
 from typing import List, AsyncIterable
-from urllib.parse import urlparse, urljoin, quote_plus
+from urllib.parse import urlparse, urljoin, quote_plus, quote
 from html import unescape
 import json
 
@@ -48,8 +48,6 @@ class Manhwa18NetClient(MangaClient):
         data = self._get_page_data(page)
         props = data.get("props", {})
 
-        # Search results may be inside different pagination structures.
-        # Try the common keys used by the site.
         candidates = [
             props.get("mangas"),
             props.get("results"),
@@ -255,7 +253,13 @@ class Manhwa18NetClient(MangaClient):
 
         return result
 
-    async def get_picture(self, manga_chapter, url, *args, **kwargs):
+    async def get_picture(
+        self,
+        manga_chapter,
+        url,
+        *args,
+        **kwargs
+    ):
         headers = {
             **self.headers,
             "Referer": manga_chapter.url,
