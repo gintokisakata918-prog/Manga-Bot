@@ -8,7 +8,7 @@ from bs4 import BeautifulSoup
 from plugins.client import MangaClient, MangaCard, MangaChapter, LastChapter
 
 
-class Manhwa18Client(MangaClient):
+class Manhwa18NetClient(MangaClient):
     base_url = urlparse("https://manhwa18.net/")
     search_url = urljoin(base_url.geturl(), "search")
     updates_url = base_url.geturl()
