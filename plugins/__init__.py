@@ -3,7 +3,7 @@ from .manhuako import ManhuaKoClient
 from .manhuaplus import ManhuaPlusClient
 from .tmo import TMOClient
 from .mangadex import MangaDexClient
-from .manhwa18 import Manhwa18Client
+from .manhwa18net import Manhwa18NetClient
 from .mangasin import MangasInClient
 from .mcreader import McReaderClient
 from .mangakakalot import MangaKakalotClient
