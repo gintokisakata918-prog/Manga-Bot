@@ -8,7 +8,7 @@ from .search_engine import search
 
 
 class MangaSeeClient(MangaClient):
-    base_url = urlparse("https://mangasee123.com/")
+    base_url = urlparse("https://manhwa.net/")
     search_url = urljoin(base_url.geturl(), "_search.php")
     manga_url = urljoin(base_url.geturl(), "manga")
     chapter_url = urljoin(base_url.geturl(), "read-online")
