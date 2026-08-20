@@ -10,7 +10,7 @@ from plugins.client import MangaClient, MangaCard, MangaChapter, LastChapter
 
 class Manhwa18NetClient(MangaClient):
     base_url = urlparse("https://manhwa18.net/")
-    search_url = urljoin(base_url.geturl(), "search")
+    search_url = urljoin(base_url.geturl(), "tim-kiem")
     updates_url = base_url.geturl()
 
     pre_headers = {
